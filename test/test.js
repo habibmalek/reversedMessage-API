@@ -6,7 +6,7 @@ const expect = chai.expect;
 chai.use(chaiHttp);
 
 describe('Reverse Endpoint Tests', () => {
-  const testPort = 3022;  // different port for testing
+  const testPort = 3021;  // different port for testing
   const baseUrl = `http://localhost:${testPort}`;
 
   let testServer;
@@ -20,7 +20,7 @@ describe('Reverse Endpoint Tests', () => {
   });
 
   it('should reverse a valid message', (done) => {
-    const message = '!maeT ylhtraE olleH';
+    const message = '!maeT olleH';
 
     chai.request(baseUrl)
       .post('/reverse')
@@ -28,7 +28,7 @@ describe('Reverse Endpoint Tests', () => {
       .end((err, res) => {
         expect(res).to.have.status(200);
         expect(res.body).to.have.property('reversedMessage');
-        expect(res.body.reversedMessage).to.equal('Hello Earthly Team!');
+        expect(res.body.reversedMessage).to.equal('Hello Team!');
         done();
       });
   });

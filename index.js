@@ -3,7 +3,7 @@ const loggingMiddleware = require('./middlewares/loggingMiddleware');
 const validateMessage = require('./middlewares/validationMiddleware');
 const reversedMessage = require('./controllers/messageController');
 const app = express();  
-const port = 3011;  
+const port = 3012;  
 
 // logging middleware
 app.use(loggingMiddleware);
